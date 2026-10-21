@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ie-toolkit"
+version = "0.1.0"
+description = "工业工程计算命令行工具：节拍、OEE、产线平衡与产能 / Industrial-engineering calculators: takt time, OEE, line balancing, capacity"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "aoyexiaoqi"}]
+requires-python = ">=3.9"
+keywords = ["industrial-engineering", "manufacturing", "oee", "takt", "line-balancing", "capacity"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Natural Language :: Chinese (Simplified)",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.scripts]
+ie-calc = "ie_toolkit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoyexiaoqi/ie-toolkit"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
